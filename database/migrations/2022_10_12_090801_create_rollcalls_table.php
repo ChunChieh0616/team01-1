@@ -16,9 +16,9 @@ class CreateRollcallsTable extends Migration
         Schema::create('rollcalls', function (Blueprint $table) {
             $table->id()->comment("編號");
             $table->dateTime("date")->nullable(false)->comment("點名日期");
-            $table->integer("bid")->unsigned()->nullable(false)->comment("床位編號");
+            $table->integer("sbid")->unsigned()->nullable(false)->comment("學生床位");
             $table->boolean("presence")->nullable(false)->comment("在場與否");
-            $table->boolean("leaves")->nullable(false)->comment("外宿");
+            $table->boolean("leave")->nullable(false)->comment("外宿");
             $table->boolean("late")->nullable(false)->comment("晚歸");
             $table->timestamps();
         });
