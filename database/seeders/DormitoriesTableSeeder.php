@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DormitoriesTableSeeder extends Seeder
 {
@@ -14,5 +15,10 @@ class DormitoriesTableSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('dormitories')->insert([
+            'name' => "女一宿",
+            'housemaster' => "Mary",
+            'contact' => "0982168523",
+        ]);
     }
 }
