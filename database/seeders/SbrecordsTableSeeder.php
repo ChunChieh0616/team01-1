@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class SbrecordTableSeeder extends Seeder
+class SbrecordsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,12 +15,6 @@ class SbrecordTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('sbrecords')->insert([
-            'school_year' => 110,
-            'semester' => 2,
-            'sid' => 3,
-            'bid' => 1
-        ]);
         DB::table('sbrecords')->insert([
             'school_year' => 110,
             'semester' => 2,
