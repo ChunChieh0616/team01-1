@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Faker\Core\Number;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -31,9 +32,23 @@ class StudentsTableSeeder extends Seeder
         }
         return $randomNumberString;
     }
-    public function StudentIDCreate() {
-        return ucfirst(generateRandomString(1)).generateRandomNumberString();;
+
+    public function StudentIDCreate($length = 10) {
+        // $numbers = "";
+        // $numbers .= generateRandomString(1).generateRandomNumberString();
+        // return ucfirst($numbers);
+        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $numbers = "0123456789";
+        $numbersLength = strlen($numbers);
+        $randomString = '';
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $numbers[rand(0, $numbersLength - 1)];
+        }
+        return ucfirst($randomString);
     }
+    
     public function generateRandomClass() {
         $majors = ['資網', '電子', '電機', '化材', '機械', '企管','資管',"國企","財金","工管","應外","遊戲","觀光","文創"];
         $levels = ['一','二','三','四'];
