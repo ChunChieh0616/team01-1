@@ -22,5 +22,33 @@
     </head>
     <body class="antialiased">
         檢視所有學生資料表的視圖(views)
+        <table>
+        <tr>
+            <th>編號</th>
+            <th>學號</th>
+            <th>班級</th>
+            <th>姓名</th>
+            <th>地址</th>
+            <th>電話</th>
+            <th>國籍</th>
+            <th>關係人</th>
+            <th>稱謂</th>
+            <th>備註</th>
+        </tr>
+        @foreach($student as $student)
+            <tr>
+                <td>{{ $student->id }}</td>
+                <td>{{ $student->number }}</td>
+                <td>{{ $student->class }}</td>
+                <td>{{ $student->name }}</td>
+                <td>{{ $student->address }}</td>
+                <td>{{ $student->phone }}</td>
+                <td>{{ $student->nationality }}</td>
+                <td>{{ $student->guardian }}</td>
+                <td>{{ $student->salutation }}</td>
+                <td>{{ $student->remark }}</td>
+            </tr>
+        @endforeach
+    </table>
     </body>
 </html>
