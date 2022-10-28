@@ -15,11 +15,14 @@ class SbrecordsTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('sbrecords')->insert([
-            'school_year' => 110,
-            'semester' => 2,
-            'sid' => 3,
-            'bid' => 1
-        ]);
+        for($i=0;$i<30;$i++){
+            DB::table('sbrecords')->insert([
+            'school_year' => rand(110, 115),
+            'semester' => rand(1,2),
+            'sid' => rand(1, 10),
+            'bid' => rand(1, 25)
+            ]);
+        }
+        
     }
 }

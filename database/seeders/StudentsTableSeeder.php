@@ -87,24 +87,27 @@ class StudentsTableSeeder extends Seeder
     public function run()
     {
         //
-        $number = $this->StudentIDCreate();
-        $class = $this->generateRandomClass();
-        $name = $this->generateRandomName();
-        $phone = $this->generateRandomPhone();
-        $nationality = $this->generateRandomNationality();
-        $salutation = $this->generateRandomRelation();
+        for ($i=0;$i<30;$i++){
+            $number = $this->StudentIDCreate();
+            $class = $this->generateRandomClass();
+            $name = $this->generateRandomName();
+            $phone = $this->generateRandomPhone();
+            $nationality = $this->generateRandomNationality();
+            $salutation = $this->generateRandomRelation();
 
 
-        DB::table('students')->insert([
-            'number' => $number,
-            'class' => $class,
-            'name' => $name,
-            'address' => $name,
-            'phone' => $phone,
-            'nationality' => $nationality,
-            'guardian' => $name,
-            'salutation' => $salutation,
-            'remark' => ""
-        ]);
+            DB::table('students')->insert([
+                'number' => $number,
+                'class' => $class,
+                'name' => $name,
+                'address' => $name,
+                'phone' => $phone,
+                'nationality' => $nationality,
+                'guardian' => $name,
+                'salutation' => $salutation,
+                'remark' => ""
+        ]); 
+        }
+        
     }
 }

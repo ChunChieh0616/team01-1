@@ -38,12 +38,14 @@ class BedsTableSeeder extends Seeder
             $bedcode = $this->generateRandomBedcode();
             $did = $this->generateRandomDid();
             $roomtype = $this->generateRandomRoomtype();
+        
+            DB::table('beds')->insert([
+                'bedcode' => $bedcode,
+                'did' => $did,
+                'roomtype' => $roomtype
+            ]);
         }
 
-        DB::table('beds')->insert([
-            'bedcode' => $bedcode,
-            'did' => $did,
-            'roomtype' => $roomtype
-        ]);
+        
     }
 }

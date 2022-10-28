@@ -15,7 +15,8 @@ class CreateLeavesTable extends Migration
     {
         Schema::create('leaves', function (Blueprint $table) {
             $table->id()->comment("編號");
-            $table->integer("sbid")->unsigned()->nullable(false)->comment("學生床位");
+            $table->foreignId("sbid")->unsigned()->nullable(false)->comment("學生床位");
+            $table->foreign('sbid')->references('id')->on('sbrecords')->onDelete('cascade');
             $table->dateTime("start")->nullable(false)->comment("外宿日起");
             $table->dateTime("end")->nullable(false)->comment("外宿日訖");
             $table->string("reason",191)->nullable(false)->comment("外宿原因");

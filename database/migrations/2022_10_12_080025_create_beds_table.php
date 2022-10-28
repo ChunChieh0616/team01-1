@@ -16,7 +16,8 @@ class CreateBedsTable extends Migration
         Schema::create('beds', function (Blueprint $table) {
             $table->id()->comment("編號");
             $table->string("bedcode",191)->nullable(false)->comment("床位代碼");
-            $table->integer("did")->unsigned()->nullable(false)->comment("宿別(外鍵)");
+            $table->foreignId("did")->unsigned()->nullable(false)->comment("宿別(外鍵)");
+            $table->foreign('did')->references('id')->on('dormitories')->onDelete('cascade');
             $table->string("roomtype",191)->nullable(false)->comment("住房類型");
             $table->timestamps();
         });
