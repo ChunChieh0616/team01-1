@@ -26,8 +26,8 @@ class LeavesTableSeeder extends Seeder
     public function run()
     {
         for ($i=0;$i<30;$i++){
-            $random_startdatetime = Carbon::now()->subMonth(rand(1,5))->subDay(rand(1,29));
-            $random_enddatetime = Carbon::now()->addMonth(rand(1,5))->addDay(rand(1,29));
+            $random_startdatetime = Carbon::now()->subMonth(rand(1,5))->subDay(rand(1,29))->toDateString();
+            $random_enddatetime = Carbon::now()->addMonth(rand(1,5))->addDay(rand(1,29))->toDateString();
             $reason = $this -> generateRandomString();
             //
             DB::table('leaves')->insert([

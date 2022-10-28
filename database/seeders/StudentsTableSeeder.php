@@ -68,9 +68,9 @@ class StudentsTableSeeder extends Seeder
         return $name;
     }
     public function generateRandomPhone() {
-        $area_code = $this->generateRandomNumberString(2);
+        $area_codes = ["02","03","04","05","06","07","08","09"];
         $code = $this->generateRandomNumberString(8);
-        $phone = $area_code . "-". $code;
+        $phone = $area_codes[rand(0,7)] . "-". $code;
         return $phone;
     }
 
@@ -91,7 +91,9 @@ class StudentsTableSeeder extends Seeder
             $number = $this->StudentIDCreate();
             $class = $this->generateRandomClass();
             $name = $this->generateRandomName();
+            $address = $this->generateRandomName(15);
             $phone = $this->generateRandomPhone();
+            $guardian = $this->generateRandomName();
             $nationality = $this->generateRandomNationality();
             $salutation = $this->generateRandomRelation();
 
@@ -100,10 +102,10 @@ class StudentsTableSeeder extends Seeder
                 'number' => $number,
                 'class' => $class,
                 'name' => $name,
-                'address' => $name,
+                'address' => $address,
                 'phone' => $phone,
                 'nationality' => $nationality,
-                'guardian' => $name,
+                'guardian' => $guardian,
                 'salutation' => $salutation,
                 'remark' => ""
         ]); 

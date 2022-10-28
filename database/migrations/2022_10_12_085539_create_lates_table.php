@@ -17,8 +17,8 @@ class CreateLatesTable extends Migration
             $table->id()->comment("編號");
             $table->foreignId("sbid")->unsigned()->nullable(false)->comment("學生床位");
             $table->foreign('sbid')->references('id')->on('sbrecords')->onDelete('cascade');
-            $table->dateTime("start")->nullable(false)->comment("長期晚歸日起");
-            $table->dateTime("end")->nullable(false)->comment("長期晚歸日訖");
+            $table->date("start")->nullable(false)->comment("長期晚歸日起");
+            $table->date("end")->nullable(false)->comment("長期晚歸日訖");
             $table->string("reason",191)->nullable(false)->comment("長期晚歸原因");
             $table->string("company",191)->nullable(false)->comment("單位名稱");
             $table->string("contact",191)->nullable(false)->comment("連絡電話");
