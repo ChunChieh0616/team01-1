@@ -21,6 +21,28 @@
         </style>
     </head>
     <body class="antialiased">
-        檢視所有學生床位表的視圖(views)
+        <h1>檢視所有學生床位表的視圖(views)</h1>
+        <table>
+        <tr>
+            <th>編號</th>
+            <th>學年</th>
+            <th>學期</th>
+            <th>學生編號</th>
+            <th>床位</th>
+            <th>詳細資料1</th>
+            <th>刪除資料</th>
+        </tr>
+        @foreach($sbrecord as $sbrecord)
+            <tr>
+                <td>{{ $sbrecord->id }}</td>
+                <td>{{ $sbrecord->school_year }}</td>
+                <td>{{ $sbrecord->semester }}</td>
+                <td>{{ $sbrecord->sid }}</td>
+                <td>{{ $sbrecord->bid }}</td>
+                <td><a href="{{route('sbrecords.show',['id'=>$sbrecord->id]) }}">詳細資料</td>
+                <td><a href="{{route('sbrecords.destroy',['id'=>$sbrecord->id]) }}">刪除資料</td>
+            </tr>
+        @endforeach
+    </table>
     </body>
 </html>

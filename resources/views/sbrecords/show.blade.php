@@ -21,6 +21,28 @@
         </style>
     </head>
     <body class="antialiased">
-        顯示單一資料學生床位表的視圖(views)
+        <h1>顯示單一資料學生床位表的視圖(views)</h1>
+        <table>
+            <tr>
+                <td>學生床位資料編號:</td>
+                <td>{{$sbrecord->id}}</td>
+            </tr>
+            <tr>
+                <td>學年:</td>
+                <td>{{$sbrecord->school_year}}</td>
+            </tr>
+            <tr>
+                <td>學期:</td>
+                <td>{{$sbrecord->semester}}</td>
+            </tr>
+            <tr>
+                <td>學生編號:</td>
+                <td>{{$sbrecord->sid}}</td>
+            </tr>
+            <tr>
+                <td>床位:</td>
+                <td>{{$sbrecord->bid}}</td>
+            </tr>
+        </table>
     </body>
 </html>

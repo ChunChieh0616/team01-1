@@ -21,6 +21,28 @@
         </style>
     </head>
     <body class="antialiased">
-        顯示單一資料學生資料表的視圖(views)
+        <h1>顯示單一資料學生資料表的視圖(views)</h1>
+        <table>
+            <tr>
+                <td>學生編號:</td>
+                <td>{{$student->id}}</td>
+            </tr>
+            <tr>
+                <td>學號:</td>
+                <td>{{$student->number}}</td>
+            </tr>
+            <tr>
+                <td>班級:</td>
+                <td>{{$student->class}}</td>
+            </tr>
+            <tr>
+                <td>姓名:</td>
+                <td>{{$student->name}}</td>
+            </tr>
+            <tr>
+                <td>居住地址:</td>
+                <td>{{$student->address}}</td>
+            </tr>
+        </table>
     </body>
 </html>

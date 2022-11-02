@@ -33,9 +33,15 @@ Route::get('/', function () {
 });
 
 Route::get('students',[StudentsController::class,'index'])->name('students.index');
+Route::get('students/{id}', [StudentsController::class, 'show'])->where('id','[0-9]+')->name('students.show');
+Route::get('students/delete/{id}', [StudentsController::class, 'destroy'])->where('id','[0-9]+')->name('students.destroy');
+
 Route::get('beds',[BedsController::class,'index'])->name('beds.index');
 Route::get('dormitories',[DormitoriesController::class,'index'])->name('dormitories.index');
 Route::get('lates',[LatesController::class,'index'])->name('lates.index');
 Route::get('leaves',[LeavesController::class,'index'])->name('leaves.index');
 Route::get('rollcalls',[RollcallsController::class,'index'])->name('rollcalls.index');
+
 Route::get('sbrecords',[SbrecordsController::class,'index'])->name('sbrecords.index');
+Route::get('sbrecords/{id}', [SbrecordsController::class, 'show'])->name('sbrecords.show');
+Route::get('sbrecords/delete/{id}', [SbrecordsController::class, 'destroy'])->where('id','[0-9]+')->name('sbrecords.destroy');

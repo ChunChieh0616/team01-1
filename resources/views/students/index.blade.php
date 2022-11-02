@@ -34,6 +34,8 @@
             <th>關係人</th>
             <th>稱謂</th>
             <th>備註</th>
+            <th>詳細資料1</th>
+            <th>刪除資料</th>
         </tr>
         @foreach($student as $student)
             <tr>
@@ -47,6 +49,8 @@
                 <td>{{ $student->guardian }}</td>
                 <td>{{ $student->salutation }}</td>
                 <td>{{ $student->remark }}</td>
+                <td><a href="{{route('students.show',['id'=>$student->id]) }}">詳細資料</td>
+                <td><a href="{{route('students.destroy',['id'=>$student->id]) }}">刪除資料</td>
             </tr>
         @endforeach
     </table>
